@@ -11,7 +11,7 @@
           <div class="form-group">
             <div class="radio" ng-repeat="slot in bookableSlots">
               <label>
-                <input type="radio" ng-model="slot_select.index" value="{{$index}}" ng-change="changeSlot()" />{{slot.start_time | date:'H:mm'}} - {{slot.end_time | date:'H:mm'}} - (3 spaces)</label>
+                <input type="radio" ng-model="slot_select.index" value="{{$index}}" ng-change="changeSlot()" />{{slot.start_time | date:'H:mm'}} - {{slot.end_time | date:'H:mm'}} - ({{slot.available_slots}}/{{slot.maximum_slots}} spaces)</label>
             </div>
             <div ng-show="!bookableSlots || bookableSlots.length == 0">
               <p>There is no more spaces on this date.</p>
@@ -40,7 +40,9 @@
         </strong>
       </legend>
 
-      <form login-form></form>
+      <div ng-show="new_user">
+          <form login-form></form>
+      </div>
 
       <form name="form" novalidate ng-submit="submitForm()">
         <div class="row">
@@ -73,18 +75,18 @@
           </div>
         </div>
 
-        <div class="row">
+        <div class="row" ng-show="new_user">
           <div class="span6">
             <div class="form-group">
               <label>Email</label>
-              <input type="email" class="form-control span6" ng-model="form_object.email" required name="email">
+              <input type="email" class="form-control span6" ng-model="form_object.email" ng-required="new_user" name="email">
             </div>
           </div>
           <div class="span6">
             <div class="form-group">
               <label>Confirm Email</label>
               <input type="email" class="form-control span6"
-                     match="form_object.email" ng-model="confirm_email" name="email_confirmation" required>
+                     match="form_object.email" ng-model="confirm_email" name="email_confirmation"  ng-required="new_user">
             </div>
           </div>
           <div class="span12" ng-show="form.email_confirmation.$error.match">
