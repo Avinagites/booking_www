@@ -1,0 +1,22 @@
+<form name="form" novalidate ng-submit="loginAsMember()">
+  <strong> Are you a member? Login now</strong>
+  <div>
+
+    <div class="control-group" ng-class="{error: hasError(form.email)}">
+      <input name="email" type="email" ng-model="user.email" placeholder="Email address" required>
+    </div>
+
+    <div class="control-group" ng-class="{error: hasError(form.password)}">
+      <input type="password" ng-model="user.password" placeholder="Password"
+             required ng-minlength="8" name="password"
+             tooltip="Password is 8 letters long" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+
+    <div>
+      <div>
+        <button type="submit" class="btn btn-warning btn-long">Login</button>
+      </div>
+    </div>
+
+  </div>
+</form>

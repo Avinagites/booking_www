@@ -1,0 +1,63 @@
+<div class="main-container">
+  <div class="container">
+    <div class="row-fluid">
+      <div class="span8 offset2 box_con">
+        <div class=" ">
+          <h2 class="box_title text-center">Contact Us</h2>
+<p>Feel free to give us a call at (65) 8132 4284 or email us at <a href="mailto:info@drawingboardevents.com.sg">info@drawingboardevents.com.sg</a> if you have any questions and one of our friendly team members will be more than happy to help! </p>
+<hr>
+        </div>
+        <form class="form-horizontal" name="form" novalidate ng-submit="submitForm()">
+          <div class="text-left">
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label>Name*</label>
+              </div>
+              <div class="controls">
+                <input type="text" ng-model="contact.name" name="name" required>
+              </div>
+            </div>
+
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label>Email*</label>
+              </div>
+              <div class="controls">
+                <input type="email" ng-model="contact.email" name="email" required>
+              </div>
+            </div>
+
+
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label>Subject</label>
+              </div>
+              <div class="controls">
+                <input type="text" ng-model="contact.subject" name="subject" required>
+              </div>
+            </div>
+
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label>Message</label>
+              </div>
+              <div class="controls">
+                <textarea ng-model="contact.message" name="subject" required></textarea>
+              </div>
+            </div>
+            
+            <div class="row-fluid control-group">
+              <div class="control-label">
+                <label></label>
+              </div>
+              <div class="controls">
+                 <button type="submit" class="btn btn-warning btn-long">Send Message</button>
+              </div>
+            </div>
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="main-container">
+  <div id="main-content" class="container">
+    <div class="row-fluid">
+
+          <div class="span3 sidebar">
+            <div admin-dashboard-sidebar></div>
+          </div>
+          <div class="span9">
+            <div class="content-main">
+
+              <h3>Services<a href="/#/admin.services.new">
+                <button class="push-right btn btn-primary" type="button">Add New</button>
+              </a> </h3>
+              <table class="admin-table table table-bordered table-condensed table-striped table-hover">
+                <tbody><tr>
+                  <th>Name</th>
+                  <th>Display Name</th>
+                  <th></th>
+
+                </tr>
+                <tr ng-repeat="model in models | orderBy: '-created_at'">
+                  <td>{{ model.name }}</td>
+                  <td> {{ model.display_name }}</td>
+                  <td><a ng-href="/#/admin.services.edit/{{ model.id }}">Edit</a></td>
+                </tr>
+
+                </tbody></table>
+
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,96 @@
+<form novalidate ng-submit="submitForm()" name="form">
+
+  <div class="control-group" ng-class="{error: hasError(form.name)}">
+    <label class="control-label">Short Name</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.name" name="name" required placeholder="repair_service"
+             tooltip="Unique Code/Short name, do not contain spaces" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.display_name)}">
+    <label class="control-label">Display Name</label>
+    <div class="controls">
+      <input type="text" ng-model="form_object.display_name" name="display_name" required placeholder="Repair Service"
+             tooltip="Full, user friendly name" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.service_duration_in_minutes)}">
+    <label class="control-label">Service Duration(mins)</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.service_duration_in_minutes" name="service_duration_in_minutes" required
+             tooltip="How long is the service?" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.gap_duration_in_minutes)}">
+    <label class="control-label">Gap Duration(mins)</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.gap_duration_in_minutes" name="gap_duration_in_minutes" required
+             tooltip="Empty interval between services" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.maximum_bookings)}">
+    <label class="control-label">Maximum Bookings</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.maximum_bookings" name="maximum_bookings" required>
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.minimum_bookings)}">
+    <label class="control-label">Minimum Bookings</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.minimum_bookings" name="minimum_bookings" required>
+    </div>
+  </div>
+  <div class="control-group" ng-class="{error: hasError(form.book_before_in_minutes)}">
+    <label class="control-label">Book before(mins)</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.book_before_in_minutes" name="book_before_in_minutes" required
+             tooltip="Minutes before which user must place the booking" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
+
+  <div>
+    <table class="table timepicker-table">
+      <tbody>
+      <tr ng-repeat="timeslot in form_object.time_slots">
+        <td><select ng-model="timeslot.day" name="day" required
+                    ng-options="cDay for cDay in ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']"></select></td>
+        <td><strong>From</strong></td>
+        <td>
+          <div id="datetimepicker1" class="timepicker input-prepend">
+            <select class="input-mini" ng-model="timeslot.start_time_h" ng-options="t for t in [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]" required></select>
+            <span style="font-size: small">Hour (24H)</span>
+            <select class="input-mini" ng-model="timeslot.start_time_m" ng-options="t for t in [0, 30]" type="number" required></select>
+            <span style="font-size: small">Minute</span>
+          </div>
+        </td>
+        <td>
+          <strong>To</strong>
+        </td>
+        <td>
+          <div id="datetimepicker2" class="timepicker input-append">
+            <select class="input-mini" ng-model="timeslot.end_time_h" ng-options="t for t in [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]" required></select>
+            <span style="font-size: small">Hour (24H)</span>
+            <select class="input-mini" ng-model="timeslot.end_time_m" ng-options="t for t in [0, 30]" type="number" required></select>
+            <span style="font-size: small">Minute</span>
+          </div>
+        </td>
+        <td>
+          <label><i class="fa fa-times-circle-o" ng-click="removeTimeslot($index)" ></i></label>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label"></label>
+    <a class="btn btn-info" ng-click="addTimeslot()">Add time slot</a>
+  </div>
+
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>

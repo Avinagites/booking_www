@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div id="main-content" class="container">
+        <div class="row-fluid">
+
+            <div class="span12">
+                <div class="content-main">
+                    <div class="span9 calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+                    <div class="span3">
+                        <legend>Booking Information</legend>
+                        <h6>Name: {{ booking.first_name }} {{booking.last_name}}</h6>
+                        <h6>Email: {{ booking.email }}</h6>
+                        <h6>Mobile: {{ booking.mobile }}</h6>
+                        <h6>Address: {{ booking.address}} </h6>
+                        <h6>Postcode: {{ booking.postcode}} </h6>
+                        <h6>Automobile manufacturer: {{booking.automobile_manufacturer}}</h6>
+                        <h6>Automobile model: {{booking.automobile_model}}</h6>
+                        <h6>Automobile mileage: {{booking.automobile_mileage}}</h6>
+                        <h6>Customer remarks: {{booking.customer_remarks}}</h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
