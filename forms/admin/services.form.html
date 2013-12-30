@@ -28,6 +28,13 @@
              tooltip="Empty interval between services" tooltip-trigger="focus" tooltip-placement="right">
     </div>
   </div>
+  <div class="control-group" ng-class="{error: hasError(form.notify_before_in_hours)}">
+    <label class="control-label">Notify Before(hours)</label>
+    <div class="controls">
+      <input type="number" ng-model="form_object.notify_before_in_hours" name="notify_before_in_hours" required
+             tooltip="System will notify users before N hours of appointment" tooltip-trigger="focus" tooltip-placement="right">
+    </div>
+  </div>
   <div class="control-group" ng-class="{error: hasError(form.maximum_bookings)}">
     <label class="control-label">Maximum Bookings</label>
     <div class="controls">
