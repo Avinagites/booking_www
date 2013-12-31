@@ -1,10 +1,15 @@
+
 <div class="container">
   <div class="row">
-    <div class="span12">
+    <div class="span8 offset2 con_box">
       <h3 class="">Welcome to Auto Technica Booking Appointment</h3>
       <p>Please select a date that you are available for car servicing appointment from the calendar below.</p>
+      
+      <div class="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
 
-      <div class="span4">
+		<hr>
+		
+      <div class="">
         <h3 class="">Booking Availability</h3>
         <h4>Date: {{ selected_date | date:'dd MMMM, yyyy' }}</h4>
         <form role="form">
@@ -23,7 +28,7 @@
         </form>
       </div>
 
-      <div class="span6 calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+      
 
     </div>
     <div class="clearfix"></div>
@@ -32,7 +37,7 @@
   <hr>
 
   <div class="row" id="bookingFormAnchor">
-    <div class="span12" ng-show="startBooking">
+    <div class="span8 offset2 con_box" ng-show="startBooking">
       <legend>
         <strong>
           You are booking slot {{selected_slot.start_time | date:'H:mm'}} - {{selected_slot.end_time | date:'H:mm'}}
@@ -44,18 +49,20 @@
           <form login-form></form>
       </div>
 
+		<hr>	
+	
       <form name="form" novalidate ng-submit="submitForm()">
         <div class="row">
-          <div class="span6">
+          <div class="span4">
             <div class="form-group">
               <label>First name</label>
-              <input type="text" class="form-control span6" ng-model="form_object.first_name" required name="first_name">
+              <input type="text" class="form-control span4" ng-model="form_object.first_name" required name="first_name">
             </div>
           </div>
-          <div class="span6">
+          <div class="span4">
             <div class="form-group">
               <label>Last Name</label>
-              <input type="text" class="form-control span6" ng-model="form_object.last_name" required name="last_name">
+              <input type="text" class="form-control span4" ng-model="form_object.last_name" required name="last_name">
             </div>
           </div>
         </div>
@@ -162,7 +169,7 @@
           <div class="span12">
             <div class="form-group">
               <label>Message</label>
-              <input type="text" class="form-control span12" ng-model="form_object.customer_remarks">
+              <input type="text" class="form-control" ng-model="form_object.customer_remarks">
             </div>
           </div>
         </div>
