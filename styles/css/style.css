@@ -16,7 +16,7 @@ body{
 }
 
 .con_box {
-	padding: 20px 19px;
+	padding: 20px 20px;
 	background: white;
 	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
@@ -25,7 +25,18 @@ body{
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	border: 1px solid #eee;
-	margin-bottom: 2	0px;
+	margin-bottom: 20px;
+}
+
+.con_box .box_title {
+margin: 0px 0px 20px;
+padding-bottom: 10px;
+border-bottom: 1px dotted #ddd;
+}
+
+.nav > li > a{
+	float: left;
+	margin-right:  10px;
 }
 
 /* login 
@@ -109,4 +120,9 @@ body{
 }
 .timepicker-table .fa-times-circle-o:hover{
 	color: #e62124 ;
+}
+/* footer
+------------------------------------------------------ */
+.footer_div{
+	text-align: center;
 }

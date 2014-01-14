@@ -1,15 +1,18 @@
 
 <div class="container">
   <div class="row">
-    <div class="span8 offset2 con_box">
+    <div class="span12 con_box">
       <h3 class="">Welcome to Auto Technica Booking Appointment</h3>
       <p>Please select a date that you are available for car servicing appointment from the calendar below.</p>
+          </div>
       
+      <div class="span8 con_box">
       <div class="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+      </div>
 
-		<hr>
 		
-      <div class="">
+		
+      <div class="span4 con_box">
         <h3 class="">Booking Availability</h3>
         <h4>Date: {{ selected_date | date:'dd MMMM, yyyy' }}</h4>
         <form role="form">
@@ -30,7 +33,7 @@
 
       
 
-    </div>
+
     <div class="clearfix"></div>
   </div>
 
@@ -163,10 +166,10 @@
           <div class="span6">
             <div class="form-group">
               <label>Automobile Mileage</label>
-              <input type="number" class="form-control span3" ng-model="form_object.automobile_mileage" required name="automobile_mileage" placeholder="e.g. 3500">meter
+              <input type="number" class="form-control span3" ng-model="form_object.automobile_mileage" required name="automobile_mileage" placeholder="e.g. 3500"> meter
             </div>
           </div>
-          <div class="span12">
+          <div class="span6">
             <div class="form-group">
               <label>Message</label>
               <input type="text" class="form-control" ng-model="form_object.customer_remarks">
