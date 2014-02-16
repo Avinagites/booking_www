@@ -23,6 +23,11 @@
                         <h6>Automobile model: {{booking.automobile_model}}</h6>
                         <h6>Automobile mileage: {{booking.automobile_mileage}}</h6>
                         <h6>Customer remarks: {{booking.customer_remarks}}</h6>
+                        <h6>Next reminder: {{ booking.next_reminder }}</h6>
+
+                        <a href ng-show="booking" class="btn btn-info" ng-click="send_reminder(booking)">Send Reminder</a>
+
+
 
                     </div>
                 </div>
