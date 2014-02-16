@@ -3,6 +3,7 @@ angular.module('pages').config(['$routeProvider', 'WardenProvider', function($ro
             .set_template_prefix('views/pages')
             .omit_controller()
             .when('home', {omitController: false})
+            .when('admin_booking', {omitController: false, admin: true})
             .when('about')
             .when('contact', {omitController: false})
             .when('check_email')

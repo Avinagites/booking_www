@@ -36,6 +36,8 @@
                   <td>
                     <a ng-show="user.account_status == 'active'" href ng-click="block_account(user)" >Block</a>
                     <a ng-show="user.account_status == 'blocked'" href ng-click="activate_account(user)">Activate</a>
+                    |
+                    <a href ng-click="destroy_account(user)">Destroy</a>
                   </td>
                 </tr>
 
