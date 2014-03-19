@@ -1,16 +1,17 @@
 
 <div class="container">
-  <div class="row">
-    <div class="span12 con_box">
-      <h3 class="">Welcome to Auto Technica Booking Appointment</h3>
-      <p>Please select a date that you are available for car servicing appointment from the calendar below.</p>
+
+  <div class="row-fluid">
+    <div class="span12 sidebar con_box">
+      <div admin-dashboard-sidebar></div>
     </div>
+  </div>
+
+  <div class="row">
 
     <div class="span8 con_box">
       <div class="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
     </div>
-
-
 
     <div class="span4 con_box">
       <h3 class="">Booking Availability</h3>
@@ -30,9 +31,6 @@
         <button ng-show="selected_slot && !startBooking" class="btn btn-danger" ng-click="confirmSlot()">Proceed</button>
       </form>
     </div>
-
-
-
 
     <div class="clearfix"></div>
   </div>
@@ -76,12 +74,12 @@
           <div class="span6">
             <div class="form-group">
               <label>Postcode</label>
-              <input type="text" class="form-control span6" ng-model="form_object.postcode" required name="postcode">
+              <input type="number" class="form-control span6" ng-model="form_object.postcode" required name="postcode">
             </div>
           </div>
         </div>
 
-        <div class="row" ng-show="new_user">
+        <div class="row">
           <div class="span6">
             <div class="form-group">
               <label>Email</label>
@@ -97,7 +95,7 @@
           </div>
           <div class="span12" ng-show="form.email_confirmation.$error.match">
             <div class="form-group">
-              <span class="msg-error">Email and Confirm Email must match.</span>
+              <strong class="msg-error"><small>Email and Confirm Email must match.</small></strong>
             </div>
           </div>
           <br>
@@ -106,6 +104,7 @@
         <div class="row">
           <div class="span6">
             <div class="form-group">
+              <span ng-init="form_object.mobile = '+65'"></span>
               <label>Telephone (Mobile)</label>
               <input type="text" class="form-control span6" ng-model="form_object.mobile" required name="telephone">
             </div>
@@ -143,7 +142,8 @@
           <div class="span6">
             <div class="form-group">
               <label>Message</label>
-              <input type="text" class="form-control" ng-model="form_object.customer_remarks">
+              <textarea class="form-control span6" rows="4" ng-model="form_object.customer_remarks">
+              </textarea>
             </div>
           </div>
         </div>

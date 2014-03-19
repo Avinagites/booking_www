@@ -26,7 +26,10 @@
 
                 </tr>
                 <tr ng-repeat="user in users">
-                  <td>{{ user.first_name }}</td>
+                  <td>
+                    <a ng-show="user.user_type == 'Member'" href="/#/admin.member.show/{{ user.id }}">{{ user.first_name }}</a>
+                    <span ng-show="user.user_type != 'Member'" >{{ user.first_name }}</span>
+                  </td>
                   <td> {{ user.last_name }}</td>
                   <td> {{ user.email }}</td>
                   <td>{{user.account_status}}</td>

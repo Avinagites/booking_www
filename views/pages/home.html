@@ -80,7 +80,7 @@
           <div class="span6">
             <div class="form-group">
               <label>Postcode</label>
-              <input type="text" class="form-control span6" ng-model="form_object.postcode" required name="postcode">
+              <input type="number" class="form-control span6" ng-model="form_object.postcode" required name="postcode">
             </div>
           </div>
         </div>
@@ -101,7 +101,7 @@
           </div>
           <div class="span12" ng-show="form.email_confirmation.$error.match">
             <div class="form-group">
-              <span class="msg-error">Email and Confirm Email must match.</span>
+              <strong class="msg-error"><small>Email and Confirm Email must match.</small></strong>
             </div>
           </div>
           <br>
@@ -126,7 +126,7 @@
           </div>
           <div class="span12" ng-show="form.password_confirmation.$error.match">
             <div class="form-group">
-              <span class="msg-error">Password and Confirm Password must match.</span>
+              <strong class="msg-error"><small>Password and Confirm Password must match.</small></strong>
             </div>
           </div>
           <br>
@@ -136,6 +136,7 @@
           <div class="span6">
             <div class="form-group">
               <label>Telephone (Mobile)</label>
+              <span ng-init="form_object.mobile = '+65'"></span>
               <input type="text" class="form-control span6" ng-model="form_object.mobile" required name="telephone">
             </div>
           </div>
@@ -172,7 +173,8 @@
           <div class="span6">
             <div class="form-group">
               <label>Message</label>
-              <input type="text" class="form-control" ng-model="form_object.customer_remarks">
+              <textarea class="form-control span6" rows="4" ng-model="form_object.customer_remarks">
+              </textarea>
             </div>
           </div>
         </div>

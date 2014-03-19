@@ -1,37 +1,31 @@
 <div class="main-container">
-    <div id="main-content" class="container">
+  <div id="main-content" class="container">
     <div class="row-fluid">
-    
-    
-            <div class="span12 sidebar con_box">
-                <div admin-dashboard-sidebar></div>
-            </div>
-         </div>
-        <div class="row-fluid">
-
-            <div class="">
-                <div class="content-main">
-                    <div class="span8 calendar con_box" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
-                    <div class="span4 con_box">
-                        <h3 class="box_title">Details</h3>
-                        <h6>Name: {{ booking.first_name }} {{booking.last_name}}</h6>
-                        <h6>Email: {{ booking.email }}</h6>
-                        <h6>Mobile: {{ booking.mobile }}</h6>
-                        <h6>Address: {{ booking.address}} </h6>
-                        <h6>Postcode: {{ booking.postcode}} </h6>
-                        <h6>Automobile manufacturer: {{booking.automobile_manufacturer}}</h6>
-                        <h6>Automobile model: {{booking.automobile_model}}</h6>
-                        <h6>Automobile mileage: {{booking.automobile_mileage}}</h6>
-                        <h6>Customer remarks: {{booking.customer_remarks}}</h6>
-                        <h6>Next reminder: {{ booking.next_reminder }}</h6>
-
-                        <a href ng-show="booking" class="btn btn-info" ng-click="send_reminder(booking)">Send Reminder</a>
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="span12 sidebar con_box">
+        <div admin-dashboard-sidebar></div>
+      </div>
     </div>
+    <div class="row-fluid">
+      <div class="">
+        <div class="content-main">
+          <div class="span8 calendar con_box" ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+          <div class="span4 con_box">
+            <h3 class="box_title">Details</h3>
+            <h6>Name: {{ booking.first_name }} {{booking.last_name}}</h6>
+            <h6>Email: {{ booking.email }}</h6>
+            <h6>Mobile: {{ booking.mobile }}</h6>
+            <h6>Address: {{ booking.address}} </h6>
+            <h6>Postcode: {{ booking.postcode}} </h6>
+            <h6>Automobile manufacturer: {{booking.automobile_manufacturer}}</h6>
+            <h6>Automobile model: {{booking.automobile_model}}</h6>
+            <h6>Automobile mileage: {{booking.automobile_mileage}}</h6>
+            <h6>Customer remarks: {{booking.customer_remarks}}</h6>
+            <h6>Next reminder: {{ booking.next_reminder }}</h6>
+
+            <a href ng-show="booking" class="btn btn-info" ng-click="send_reminder(booking)">Send Reminder</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
