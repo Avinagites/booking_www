@@ -54,6 +54,14 @@
              tooltip="Minutes before which user must place the booking" tooltip-trigger="focus" tooltip-placement="right">
     </div>
   </div>
+  <div class="control-group" ng-class="{error: hasError(form.sms_text)}">
+    <label class="control-label">SMS Text</label>
+    <p>Available tokens: &lt;firstname&gt;, &lt;lastname&gt;, &lt;mobile&gt;, &lt;date&gt;, &lt;time&gt; </p>
+    <div class="controls">
+      <textarea rows="6" class="span10" ng-model="form_object.sms_text" name="sms_text" required
+             tooltip="Sms that will be sent to users" tooltip-trigger="focus" tooltip-placement="right"></textarea>
+    </div>
+  </div>
 
   <div>
     <table class="table timepicker-table">

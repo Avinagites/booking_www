@@ -13,34 +13,27 @@
               <!--<div class="alert alert-success">
                 <button type="button" class="close" data-dismiss="alert">×</button>
                 <strong>Well done!</strong> You listing has been created successfully. </div>-->
-              <h3 class="box_title">Users</h3>
+              <h3 class="box_title">Members</h3>
               <table class="admin-table table table-bordered table-condensed table-striped table-hover">
                 <tbody><tr>
-                  <th>First name</th>
-                  <th>Last name</th>
+                  <th>Name</th>
                   <th>Email</th>
-                  <th>Account Status</th>
+                  <th>Next Reminder</th>
                   <th>Registered Time</th>
-                  <th>Last login</th>
                   <th>Action</th>
 
                 </tr>
-                <tr ng-repeat="user in users">
-                  <td>
-                    <a ng-show="user.user_type == 'Member'" href="/#/admin.member.show/{{ user.id }}">{{ user.first_name }}</a>
-                    <span ng-show="user.user_type != 'Member'" >{{ user.first_name }}</span>
-                  </td>
-                  <td> {{ user.last_name }}</td>
-                  <td> {{ user.email }}</td>
-                  <td>{{user.account_status}}</td>
-                  <td> {{ user.created_at  | date:'MM/dd/yyyy @ h:mma'}}</td>
-                  <td>{{ user.last_login  | date:'MM/dd/yyyy @ h:mma'}}</td>
+                <tr ng-repeat="member in members">
+                  <td><a href="/#/admin.member.show/{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</a></td>
+                  <td><a href="mailto:{{ member.email }}">{{ member.email }}</a></td>
+                  <td>{{ member.last_booking.next_reminder | date:'MM/dd/yyyy @ h:mma'}}</td>
+                  <td>{{ member.created_at  | date:'MM/dd/yyyy @ h:mma'}}</td>
 
                   <td>
-                    <a ng-show="user.account_status == 'active'" href ng-click="block_account(user)" >Block</a>
-                    <a ng-show="user.account_status == 'blocked'" href ng-click="activate_account(user)">Activate</a>
+                    <a ng-show="member.account_status == 'active'" href ng-click="block_account(member)" >Block</a>
+                    <a ng-show="member.account_status == 'blocked'" href ng-click="activate_account(member)">Activate</a>
                     |
-                    <a href ng-click="destroy_account(user)">Destroy</a>
+                    <a href ng-click="destroy_account(member)">Destroy</a>
                   </td>
                 </tr>
 
