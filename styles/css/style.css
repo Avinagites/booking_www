@@ -5,6 +5,7 @@
 body{
 	padding-top: 20px;
 	background-color: #f6f6f6;
+	overflow-y: scroll;
 }
 
 .header-main{
@@ -41,7 +42,11 @@ border-bottom: 1px dotted #ddd;
 
 /* login 
 -------------------------------------------------------- */
-
+.header-main img{
+	-webkit-box-shadow: 2px 2px 3px 0px rgba(50, 50, 50, 0.75);
+	-moz-box-shadow:    2px 2px 3px 0px rgba(50, 50, 50, 0.75);
+	box-shadow:         2px 2px 3px 0px rgba(50, 50, 50, 0.75);
+}
 
 
 .fullscreen_bg {
@@ -100,6 +105,17 @@ border-bottom: 1px dotted #ddd;
   text-shadow: 0 2px 2px rgba(0,0,0,0.5);
 }
 
+
+.admin_calendar_div{
+	
+}
+
+.admin_calendar_div span{
+	width: 90px;
+	display: inline-block;
+
+	
+}
 /* time picker
 ------------------------------------------------------ */
 .time-to{
